@@ -1,0 +1,5 @@
+To do:
+- All SQL into github and then Pub/Sub (version control these)
+- All dbt tests QA'd (why aren't they working?) and into github
+- Documentation
+- Fix divide by zero and prediction queries (will prediction query even be needed if I go the Tableau route?)

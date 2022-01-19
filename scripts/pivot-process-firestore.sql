@@ -1,3 +1,7 @@
+/* This will live in a stored procedure, which gets triggered by the query_js cloud function (same one that previously contained the full query)
+*/
+CREATE OR REPLACE PROCEDURE `josh-crowhurt-personal-bq.firestore_export.genning_abt_macros_procedure`()
+BEGIN
 CALL firestore_export.pivot(
   'firestore_export.posts_schema_schema_latest',
   'firestore_export.changelog_pivot',
@@ -68,4 +72,5 @@ INSERT INTO firestore_export.Macros
   FROM `josh-crowhurt-personal-bq.firestore_export.posts_schema_schema_latest`
   WHERE type IN ('Protein', 'Total Fat', 'Carbohydrates')
   GROUP BY Date_Local, Macro
-  ORDER BY Date_Local asc
+  ORDER BY Date_Local asc;
+END;
